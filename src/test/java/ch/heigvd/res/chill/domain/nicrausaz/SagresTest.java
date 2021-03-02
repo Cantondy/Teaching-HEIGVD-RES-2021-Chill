@@ -1,31 +1,31 @@
-package ch.heigvd.res.chill.domain.wasadigi;
+package ch.heigvd.res.chill.domain.nicrausaz;
 
 import ch.heigvd.res.chill.domain.Bartender;
 import ch.heigvd.res.chill.protocol.OrderRequest;
 import ch.heigvd.res.chill.protocol.OrderResponse;
 import org.junit.jupiter.api.Test;
 
-
 import java.math.BigDecimal;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class DuvelTest {
+class SagresTest
+{
 
   @Test
-  void thePriceAndNameForPunkIPAShouldBeCorrect() {
-    Duvel beer = new Duvel();
-    assertEquals(beer.getName(), Duvel.NAME);
-    assertEquals(beer.getPrice(), Duvel.PRICE);
+  void thePriceAndNameForSagresShouldBeCorrect() {
+    Sagres beer = new Sagres();
+    assertEquals(beer.getName(), Sagres.NAME);
+    assertEquals(beer.getPrice(), Sagres.PRICE);
   }
 
   @Test
-  void aBartenderShouldAcceptAnOrderForPunkIPA() {
+  void aBartenderShouldAcceptAnOrderForSagres() {
     Bartender jane = new Bartender();
-    String productName = "ch.heigvd.res.chill.domain.wasadigi.Duvel";
+    String productName = "ch.heigvd.res.chill.domain.nicrausaz.Sagres";
     OrderRequest request = new OrderRequest(3, productName);
     OrderResponse response = jane.order(request);
-    BigDecimal expectedTotalPrice = Duvel.PRICE.multiply(new BigDecimal(3));
+    BigDecimal expectedTotalPrice = Sagres.PRICE.multiply(new BigDecimal(3));
     assertEquals(expectedTotalPrice, response.getTotalPrice());
   }
 

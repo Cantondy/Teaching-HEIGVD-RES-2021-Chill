@@ -1,31 +1,30 @@
-package ch.heigvd.res.chill.domain.wasadigi;
+package ch.heigvd.res.chill.domain.NicolasOgi;
 
 import ch.heigvd.res.chill.domain.Bartender;
 import ch.heigvd.res.chill.protocol.OrderRequest;
 import ch.heigvd.res.chill.protocol.OrderResponse;
 import org.junit.jupiter.api.Test;
 
-
 import java.math.BigDecimal;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class DuvelTest {
+class ErdingerTest {
 
   @Test
-  void thePriceAndNameForPunkIPAShouldBeCorrect() {
-    Duvel beer = new Duvel();
-    assertEquals(beer.getName(), Duvel.NAME);
-    assertEquals(beer.getPrice(), Duvel.PRICE);
+  void thePriceAndNameForErdingerShouldBeCorrect() {
+    Erdinger beer = new Erdinger();
+    assertEquals(beer.getName(), Erdinger.NAME);
+    assertEquals(beer.getPrice(), Erdinger.PRICE);
   }
 
   @Test
-  void aBartenderShouldAcceptAnOrderForPunkIPA() {
+  void aBartenderShouldAcceptAnOrderForErdinger() {
     Bartender jane = new Bartender();
-    String productName = "ch.heigvd.res.chill.domain.wasadigi.Duvel";
+    String productName = "ch.heigvd.res.chill.domain.NicolasOgi.Erdinger";
     OrderRequest request = new OrderRequest(3, productName);
     OrderResponse response = jane.order(request);
-    BigDecimal expectedTotalPrice = Duvel.PRICE.multiply(new BigDecimal(3));
+    BigDecimal expectedTotalPrice = Erdinger.PRICE.multiply(new BigDecimal(3));
     assertEquals(expectedTotalPrice, response.getTotalPrice());
   }
 
